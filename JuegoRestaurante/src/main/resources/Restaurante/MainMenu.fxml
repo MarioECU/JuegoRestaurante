@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="bodybg" stylesheets="@../recursos/stilo.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Restaurante.MainMenuController">
+   <top>
+      <Label text="MI CAFETERIA" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="44.0" />
+         </font>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </Label>
+   </top>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefHeight="532.0" prefWidth="150.0">
+               <children>
+                  <Label prefHeight="35.0" prefWidth="114.0" text="Usuario:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="145.0" text="Contraseña:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+               <children>
+                  <TextField fx:id="txtUsuario" prefHeight="29.0" prefWidth="206.0" />
+                  <TextField fx:id="txtContrasena" />
+               </children>
+            </VBox>
+            <Button fx:id="btnJugar" mnemonicParsing="false" prefHeight="99.0" prefWidth="199.0" text="JUGAR">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>
