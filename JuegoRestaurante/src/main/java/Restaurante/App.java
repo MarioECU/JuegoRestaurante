@@ -1,24 +1,14 @@
 package Restaurante;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import objetos.Producto;
-import static objetos.Producto.cargarProductos;
-import objetos.Usuario;
-import static objetos.Usuario.cargarUsuarios;
-import java.util.HashMap;
-import objetos.Nivel;
+import model.Producto;
+import model.Usuario;
+import model.Nivel;
 
 /**
  * JavaFX App
@@ -26,12 +16,15 @@ import objetos.Nivel;
 public class App extends Application {
 
     private static Scene scene;
+    private static boolean salir;
 
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("MainMenu"));
+        salir = false;
         stage.setScene(scene);
         stage.show();
+        stage.setOnCloseRequest(e -> salir = true);
     }
 
     public static void setRoot(String fxml) throws IOException {
@@ -47,13 +40,16 @@ public class App extends Application {
         return scene;
     }
     
+    public static boolean getCloseRequest(){
+        return salir;
+    }
+    
     public static void main(String[] args) {
         Producto.cargarProductos();
         Usuario.cargarUsuarios();
         Nivel.iniciarNiveles();
         System.out.println(Usuario.usuarios);
         launch();
+        Usuario.actualizarUsuarios();
     }
-
-    
 }

@@ -1,10 +1,7 @@
-package administracion;
+package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import objetos.Nivel;
-import objetos.Producto;
-import objetos.Usuario;
 
 public class Administracion {
     

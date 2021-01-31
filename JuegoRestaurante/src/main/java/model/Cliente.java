@@ -1,9 +1,8 @@
-package objetos;
+package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
-import objetos.Orden;
 
 public class Cliente implements Serializable{
     
@@ -15,6 +14,7 @@ public class Cliente implements Serializable{
     
     /**
     Constructor
+     * @param nombre
     */
     public Cliente(String nombre) {
         this.nombre = nombre;

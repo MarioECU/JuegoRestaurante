@@ -1,18 +1,14 @@
 package Restaurante;
 
-import administracion.Administracion;
+import model.Administracion;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.application.Platform;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -21,11 +17,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import objetos.Cliente;
-import objetos.ClienteBox;
-import objetos.Nivel;
-import objetos.Producto;
-import objetos.Usuario;
+import model.Cliente;
+import model.ClienteBox;
+import model.Producto;
+import model.Usuario;
 
 public class GameController implements Initializable{
     
@@ -80,7 +75,7 @@ public class GameController implements Initializable{
                 c.disminuirPaciencia();
                 cl.actualizarPaciencia();
             };
-            while(c.getPaciencia()>0){
+            while(c.getPaciencia()>0 && !App.getCloseRequest()){
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException ex) {
@@ -106,7 +101,7 @@ public class GameController implements Initializable{
                 generarCliente();
             };
             boolean c = true;
-            while(c){
+            while(c && !App.getCloseRequest()){
                 Random r = new Random();
                 int espera = r.nextInt(6); // int de esperar debe ser atributo de nivel
                 try {
